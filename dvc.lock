@@ -36,13 +36,13 @@ stages:
     params:
       params.yaml:
         train.learning_rate: 0.1
-        train.max_depth: 3
-        train.n_estimators: 50
+        train.max_depth: 1
+        train.n_estimators: 10
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 3046f1a1ac62f8c41afb497983695b24
-      size: 141546
+      md5: b24be071ecd637cf812d112316032d31
+      size: 32752
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -53,8 +53,8 @@ stages:
       nfiles: 2
     - path: models/model.pkl
       hash: md5
-      md5: 3046f1a1ac62f8c41afb497983695b24
-      size: 141546
+      md5: b24be071ecd637cf812d112316032d31
+      size: 32752
     - path: src/evaluate.py
       hash: md5
       md5: 9d0a58d3ca1787cb43bf0d873d2c32f7
